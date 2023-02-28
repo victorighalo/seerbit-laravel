@@ -1,13 +1,12 @@
 
 
 <div align="center" >
- <img width="400"  valign="top" src="https://assets.seerbitapi.com/images/seerbit_logo_type.png">
+ <img width="200"  valign="top" src="https://assets.seerbitapi.com/images/seerbit_logo_type.png">
 </div>
 
 
 <h1 align="center">
   <img width="60" valign="bottom" src="https://laravel.com/img/logomark.min.svg">
-   SeerBit
 </h1>
 
 
@@ -17,7 +16,7 @@ SeerBit PHP SDK for easy integration with SeerBit's API.
 
 ## Requirements
 This package can be used with Laravel 5.8 or higher
-PHP 7.1 or higher
+PHP 8.0 or higher
 
 ## Installation
 
@@ -39,6 +38,7 @@ You can publish the config file with:
 ```bash
  php artisan vendor:publish --provider="SeerbitLaravel\SeerbitServiceProvider" --tag="config"
 ```
+
 This is the contents of the config file that will be published to your app's directory path `config/seerbit.php`:
 ```php
 return [
@@ -57,11 +57,23 @@ The token can be generated following the guides [here](https://doc.seerbit.com/g
 
 Replace them by changes the key values in your **.env** file.
 
-`SEERBIT_ENVIRONMENT="public_key"`
+Open your .env file and add your public key, secret key and token:
+
+```php
+SEERBIT_PUBLIC_KEY=xxxxxxxxxxxxx
+SEERBIT_SECRET_KEY=xxxxxxxxxxxxx
+SEERBIT_TOKEN=xxxxxxxxxxxxx
+```
+
+*If you are using a cloud hosting service such as lambda, etc, you may need to add the above details to your environment variables section.*
+
+```
+ENSURE YOU DO NOT PUBLISH YOUR ENV FILE TO YOUR GIT REPOSITORY
+```
  
 ## Usage
 
-###Standard checkout
+### Standard checkout
 ``` php
 namespace App\Http\Controllers;
 
@@ -94,6 +106,7 @@ class Standard
         }
 }
 ```
+
 Full documentation can be found [**here**](https://seerbit.github.io/seerbit-laravel) 
 
 <br>
